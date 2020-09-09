@@ -1,1 +1,3 @@
-  "prettier.disableLanguages": [".html"] 
+  {
+    "prettier.disableLanguages": [".html"] 
+  }
