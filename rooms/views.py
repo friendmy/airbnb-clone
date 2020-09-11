@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
+from django_countries import countries
 from . import models
 
 
@@ -17,3 +18,9 @@ class HomeView(ListView):
 class RoomDetail(DetailView):
 
     model = models.Room
+
+
+def search(request):
+    city = request.GET.get("city", "Anywhere")
+    city = str.capitalize(city)
+    return render(request, "rooms/search.html", {"city": city, "countries": countries})
