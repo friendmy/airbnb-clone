@@ -13,6 +13,7 @@ pillow = "*"
 django-countries = "*"
 django-seed = "*"
 faker = "*"
+django-dotenv = "*"
 
 [requires]
 python_version = "3.7"
