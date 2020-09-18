@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    {{user_oobj.first_nam}}'s Profile'
+{% endblock page_title %}
+
+{% block content %}
+<div>
+    <div class="h-20 w-20 bg-gray-700 rounded-full text-white flex justify-center items-center">    
+    {% if user_obj.avatar %}
+        <img class="h-full w-full" src="{{user_obj.avatar.url}}" />
+    {% else %}
+        <span class="text-3xl">{{user_obj.first_name|first}}</span>
+    {% endif %}
+    </div>    
+    {{user_obj.first_name}}
+
+    {{user_obj.bio}}
+    
+    {% if user == user_obj %}
+        <a href="{% url 'users:update' %}" class="btn">Edit Profile</a>    
+    {% endif %}
+</div>
+<div class="container flex flex-col">
+    <h3>{{user_obj.first_name}}'s Rooms</h3>
+</div>
+{% endblock content %}

@@ -2,7 +2,8 @@
 <ul>
     
     {% if user.is_authenticated %}
-        <li><a href="{% url "users:logout" %}">Log out</a></li>    
+        <li><a href="{{user.get_absolute_url}}">profile</a></li>
+        <li><a href="{% url "users:logout" %}">Log out</a></li>
     {% else %}
         <li><a href="{% url "users:login" %}">Login</a></li> 
         <li><a href="{% url "users:signup" %}">Sign up</a></li>
