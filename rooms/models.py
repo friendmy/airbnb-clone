@@ -19,10 +19,10 @@ class AbstractItem(core_models.TimeStampedModel):
 
 class RoomType(AbstractItem):
 
-    """ RoomType Model definition """
+    """ RoomType Model Definition """
 
     class Meta:
-        verbose_name_plural = "Room Type"
+        verbose_name = "Room Type"
 
 
 class Amenity(AbstractItem):
@@ -37,16 +37,18 @@ class Facility(AbstractItem):
 
     """ Facility Model Definition """
 
+    pass
+
     class Meta:
         verbose_name_plural = "Facilities"
 
 
 class HouseRule(AbstractItem):
 
-    """ House Model Definition """
+    """ HouseRule Model Definition """
 
     class Meta:
-        verbose_name_plural = "House Rule"
+        verbose_name = "House Rule"
 
 
 class Photo(core_models.TimeStampedModel):
@@ -71,7 +73,7 @@ class Room(core_models.TimeStampedModel):
     city = models.CharField(max_length=80)
     price = models.IntegerField()
     address = models.CharField(max_length=140)
-    guests = models.IntegerField()
+    guests = models.IntegerField(help_text="How many people will be staying?")
     beds = models.IntegerField()
     bedrooms = models.IntegerField()
     baths = models.IntegerField()
@@ -93,7 +95,7 @@ class Room(core_models.TimeStampedModel):
 
     def save(self, *args, **kwargs):
         self.city = str.capitalize(self.city)
-        super().save(*args, **kwargs)  # Call the real save() method
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse("rooms:detail", kwargs={"pk": self.pk})
@@ -101,8 +103,12 @@ class Room(core_models.TimeStampedModel):
     def total_rating(self):
         all_reviews = self.reviews.all()
         all_ratings = 0
-        if (len(all_reviews)) > 0:
+        if len(all_reviews) > 0:
             for review in all_reviews:
                 all_ratings += review.rating_average()
             return round(all_ratings / len(all_reviews), 2)
         return 0
+
+    def first_photo(self):
+        photo, = self.photos.all()[:1]
+        return photo.file.url

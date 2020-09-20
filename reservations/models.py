@@ -1,13 +1,11 @@
 from django.db import models
-
-# from django.utils import timezone
-from datetime import datetime
+from django.utils import timezone
 from core import models as core_models
 
 
 class Reservation(core_models.TimeStampedModel):
 
-    """ Reservations Model Definition """
+    """ Reservation Model Definition """
 
     STATUS_PENDING = "pending"
     STATUS_CONFIRMED = "confirmed"
@@ -35,18 +33,13 @@ class Reservation(core_models.TimeStampedModel):
         return f"{self.room} - {self.check_in}"
 
     def in_progress(self):
-        # now = timezone.now().date()
-        now = datetime.now().date()
-        print(now)
-        print(self.check_in)
-        print(self.check_out)
+        now = timezone.now().date()
         return now >= self.check_in and now <= self.check_out
 
     in_progress.boolean = True
 
     def is_finished(self):
-        # now = timezone.now().date()
-        now = datetime.now().date()
+        now = timezone.now().date()
         return now > self.check_out
 
     is_finished.boolean = True

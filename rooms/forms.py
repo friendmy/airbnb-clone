@@ -3,7 +3,7 @@ from django_countries.fields import CountryField
 from . import models
 
 
-class SearchFrom(forms.Form):
+class SearchForm(forms.Form):
 
     city = forms.CharField(initial="Anywhere")
     country = CountryField(default="KR").formfield()
