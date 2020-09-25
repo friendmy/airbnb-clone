@@ -41,7 +41,7 @@ textarea {
 }
 
 select {
-  height: 50px;
+  height: 70px;
 }
 
 form {
@@ -100,6 +100,10 @@ form {
   &.warning {
     @apply bg-yellow-400;
   }
+}
+
+.border-section {
+  @apply border-b border-gray-400 pb-8 mt-8;
 }
 
 @tailwind utilities;
