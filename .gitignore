@@ -141,3 +141,4 @@ cython_debug/
 uploads/
 node_modules/
 static/
+static/css/styles.css
