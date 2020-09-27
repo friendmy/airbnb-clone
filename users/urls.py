@@ -21,4 +21,5 @@ urlpatterns = [
         name="passworddone",
     ),
     path("<int:pk>/edit/", views.UserProfileView.as_view(), name="profile"),
+    path("switch-hosting/", views.switch_hosting, name="switch-hosting"),
 ]
