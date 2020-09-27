@@ -1,4 +1,14 @@
+from datetime import datetime
 import calendar
+
+
+class Days:
+    def __init__(self, number, past):
+        self.number = number
+        self.past = past
+
+    def __str__(self):
+        return str(self.number)
 
 
 class Calendar(calendar.Calendar):
@@ -6,7 +16,7 @@ class Calendar(calendar.Calendar):
         super().__init__(firstweekday=6)
         self.year = year
         self.month = month
-        self.day_names = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sum")
+        self.day_names = ("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
         self.months = (
             "January",
             "February",
@@ -23,12 +33,20 @@ class Calendar(calendar.Calendar):
         )
 
     def get_days(self):
-        days = self.monthdays2calendar(self.year, self.month)
-        print(days)
+        weeks = self.monthdays2calendar(self.year, self.month)
+        days = []
+        for week in weeks:
+            for day, _ in week:
+                now = datetime.now()
+                today = now.day
+                month = now.month
+                past = False
+                if month == self.month:
+                    if day < today:
+                        past = True
+                new_day = Days(day, past)
+                days.append(new_day)
+        return days
 
     def get_month(self):
         return self.months[self.month - 1]
-
-
-new_cal = Calendar(2019, 11)
-new_cal.get_days()

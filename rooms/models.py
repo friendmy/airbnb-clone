@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 from django.urls import reverse
 from django_countries.fields import CountryField
@@ -122,6 +123,14 @@ class Room(core_models.TimeStampedModel):
         return photos
 
     def get_calendars(self):
-        calendar = Calendar(2019, 11)
-        print(calendar.get_month())
-        return False
+        now = datetime.now()
+        this_year = now.year
+        this_month = now.month
+        next_year = this_year
+        next_month = this_month + 1
+        if this_month == 12:
+            next_year = this_year + 1
+            next_month = 1
+        this_month = Calendar(this_year, this_month)
+        next_month = Calendar(next_year, next_month)
+        return [this_month, next_month]
