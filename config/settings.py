@@ -27,6 +27,9 @@ DEBUG = bool(os.environ.get("DEBUG"))
 
 ALLOWED_HOSTS = [
     "airbnb-clone.eba-nbfbiaa9.ap-northeast-2.elasticbeanstalk.com",
+    "15.165.6.220",
+    "172.31.3.184",
+    "52.78.47.184",
 ]
 
 
