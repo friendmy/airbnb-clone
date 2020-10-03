@@ -140,8 +140,6 @@ cython_debug/
 .DS_Store
 uploads/
 node_modules/
-static/
-static/css/styles.css
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
