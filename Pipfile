@@ -17,6 +17,7 @@ faker = "*"
 django-dotenv = "*"
 requests = "*"
 pipenv-to-requirements = "*"
+sentry-sdk = "*"
 
 [requires]
 python_version = "3.7"
