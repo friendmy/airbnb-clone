@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import UserManager
 
 
 class CustomModelManager(models.Manager):
@@ -10,3 +11,7 @@ class CustomModelManager(models.Manager):
 
     def get_by_natural_key(self, email_):
         return self.get(code_number=email_)
+
+
+class CustomUserManager(CustomModelManager, UserManager):
+    pass
