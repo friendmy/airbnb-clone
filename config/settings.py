@@ -174,7 +174,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 if DEBUG:
     sentry_sdk.init(
-        dsn="https://c2fa82fa707e4241a46f6cebe596f12f@o456460.ingest.sentry.io/5449570",
+        dsn=os.environ.get("SENTRY_URL"),
         integrations=[DjangoIntegration()],
         traces_sample_rate=1.0,
         # If you wish to associate users to errors (assuming you are using
