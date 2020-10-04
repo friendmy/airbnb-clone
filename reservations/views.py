@@ -30,5 +30,7 @@ def create(request, room, year, month, day):
 
 
 class ReservationDetailView(View):
+    model = models.Reservation
+
     def get(self):
         pass
