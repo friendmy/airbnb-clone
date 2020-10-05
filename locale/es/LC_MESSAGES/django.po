@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 22:16+0900\n"
+"POT-Creation-Date: 2020-10-06 08:09+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,35 +30,45 @@ msgstr "Por favor no nos copies."
 msgid "All rights reserved."
 msgstr "Todos los derechos reservados."
 
-#: .\templates\partials\nav.html:7
+#: .\templates\partials\nav.html:9
 msgid "Stop hosting"
 msgstr "Cambiar a Invitado"
 
-#: .\templates\partials\nav.html:9
+#: .\templates\partials\nav.html:11
 msgid "Start hosting"
 msgstr "Cambiar a Host"
 
-#: .\templates\partials\nav.html:15
+#: .\templates\partials\nav.html:17
 msgid "Create Room"
 msgstr "Crear Habitación"
 
-#: .\templates\partials\nav.html:17
+#: .\templates\partials\nav.html:20 .\templates\partials\nav.html:21
+msgid "Favs"
+msgstr ""
+
+#: .\templates\partials\nav.html:22
 msgid "Profile"
 msgstr "Perfil"
 
-#: .\templates\partials\nav.html:18
+#: .\templates\partials\nav.html:23
 msgid "Log out"
 msgstr "Cerrar Sesión"
 
-#: .\templates\partials\nav.html:20
+#: .\templates\partials\nav.html:25
 msgid "Log in"
 msgstr "Iniciar Sesión"
 
-#: .\templates\partials\nav.html:21
+#: .\templates\partials\nav.html:26
 msgid "Sign up"
 msgstr "Sign up"
 
-#: .\templates\rooms\room_detail.html:29
+#: .\templates\rooms\room_detail.html:32
+#, fuzzy
+#| msgid "Save to Favourites"
+msgid "Remove from Favourites"
+msgstr "Save to Favourites"
+
+#: .\templates\rooms\room_detail.html:34
 msgid "Save to Favourites"
 msgstr "Save to Favourites"
 
@@ -71,38 +81,38 @@ msgstr "Pagina %(current_page)s de %(total_pages)s"
 msgid "Can't go there"
 msgstr "No puedes ir ahi"
 
-#: .\users\models.py:21
+#: .\users\models.py:22
 msgid "Male"
 msgstr "Hombre"
 
-#: .\users\models.py:22
+#: .\users\models.py:23
 msgid "Female"
 msgstr "Mujer"
 
-#: .\users\models.py:23
+#: .\users\models.py:24
 msgid "Other"
 msgstr "Otro"
 
-#: .\users\models.py:30
+#: .\users\models.py:31
 msgid "English"
 msgstr "Inglés"
 
-#: .\users\models.py:31
+#: .\users\models.py:32
 msgid "Korean"
 msgstr "Coreano"
 
-#: .\users\models.py:51
+#: .\users\models.py:52
 msgid "gender"
 msgstr "género"
 
-#: .\users\models.py:53
+#: .\users\models.py:54
 msgid "bio"
 msgstr "biografía"
 
-#: .\users\models.py:56
+#: .\users\models.py:57
 msgid "language"
 msgstr "lenguage"
 
-#: .\users\models.py:83
+#: .\users\models.py:85
 msgid "Verify Airbnb Account"
 msgstr "Verificar Cuenta de Airbnb"
